@@ -49,6 +49,17 @@ namespace QuanLyQuanCafe.DAO
         {
             return DataProvider.Instance.ExcuteQurey("exec USP_GetListBillByDate @checkin , @checkout", new object[] { checkin, checkout });
         }
+
+        public DataTable GetBillListDateAndPage(DateTime checkin, DateTime checkout, int pageNum)
+        {
+            return DataProvider.Instance.ExcuteQurey("exec USP_GetListBillByDateAndPage @checkin , @checkout , @page", new object[] { checkin, checkout, pageNum});
+        }
+
+        public int GetNumBillListDate(DateTime checkin, DateTime checkout)
+        {
+            return (int)DataProvider.Instance.ExcuteScalar("exec USP_GetNumBillByDate @checkin , @checkout", new object[] { checkin, checkout });
+        }
+
         public int GetMaxIDBill()
         {
             try

@@ -336,6 +336,48 @@ namespace QuanLyQuanCafe
         }
         #endregion
 
+        private void btnFirstBillPage_Click(object sender, EventArgs e)
+        {
+            txtPageBill.Text = "1";
+        }
+
+        private void btnLastBillPage_Click(object sender, EventArgs e)
+        {
+            int sumRecord = BillDAO.Instance.GetNumBillListDate(dtpkFromdate.Value, dtpkTodate.Value);
+            int lastPage = sumRecord / 10;
+
+            if (sumRecord % 10 != 0)
+                lastPage++;
+
+            txtPageBill.Text = lastPage.ToString();
+        }
+
+        private void txtPageBill_TextChanged(object sender, EventArgs e)
+        {
+            dtgvBill.DataSource = BillDAO.Instance.GetBillListDateAndPage(dtpkFromdate.Value, dtpkTodate.Value, Convert.ToInt32(txtPageBill.Text));
+
+        }
+
+        private void btnPrevioursBillPage_Click(object sender, EventArgs e)
+        {
+            int page = Convert.ToInt32(txtPageBill.Text);
+            if (page > 1)
+                page--;
+
+            txtPageBill.Text = page.ToString();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            int page = Convert.ToInt32(txtPageBill.Text);
+            int sumRecord = BillDAO.Instance.GetNumBillListDate(dtpkFromdate.Value, dtpkTodate.Value);
+
+            if (page < sumRecord)
+                page++;
+
+            txtPageBill.Text = page.ToString();
+        }
+
         
     }
 }

@@ -97,6 +97,7 @@
             this.panel22 = new System.Windows.Forms.Panel();
             this.btnResrtpass = new System.Windows.Forms.Button();
             this.panel24 = new System.Windows.Forms.Panel();
+            this.nmType = new System.Windows.Forms.NumericUpDown();
             this.label11 = new System.Windows.Forms.Label();
             this.panel25 = new System.Windows.Forms.Panel();
             this.txtDisplayname = new System.Windows.Forms.TextBox();
@@ -111,7 +112,11 @@
             this.btnEditaccount = new System.Windows.Forms.Button();
             this.btnDeleteaccount = new System.Windows.Forms.Button();
             this.btnAddaccount = new System.Windows.Forms.Button();
-            this.nmType = new System.Windows.Forms.NumericUpDown();
+            this.btnFirstBillPage = new System.Windows.Forms.Button();
+            this.btnLastBillPage = new System.Windows.Forms.Button();
+            this.btnPrevioursBillPage = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.txtPageBill = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.tpBill.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -146,12 +151,12 @@
             this.tpAccount.SuspendLayout();
             this.panel22.SuspendLayout();
             this.panel24.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nmType)).BeginInit();
             this.panel25.SuspendLayout();
             this.panel26.SuspendLayout();
             this.panel28.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvAccount)).BeginInit();
             this.panel29.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nmType)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -181,6 +186,11 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.txtPageBill);
+            this.panel2.Controls.Add(this.button2);
+            this.panel2.Controls.Add(this.btnPrevioursBillPage);
+            this.panel2.Controls.Add(this.btnLastBillPage);
+            this.panel2.Controls.Add(this.btnFirstBillPage);
             this.panel2.Controls.Add(this.dtgvBill);
             this.panel2.Location = new System.Drawing.Point(7, 50);
             this.panel2.Name = "panel2";
@@ -194,7 +204,7 @@
             this.dtgvBill.Location = new System.Drawing.Point(4, 4);
             this.dtgvBill.Name = "dtgvBill";
             this.dtgvBill.RowTemplate.Height = 24;
-            this.dtgvBill.Size = new System.Drawing.Size(824, 455);
+            this.dtgvBill.Size = new System.Drawing.Size(824, 399);
             this.dtgvBill.TabIndex = 0;
             // 
             // panel1
@@ -209,7 +219,7 @@
             // 
             // btnViewbill
             // 
-            this.btnViewbill.Location = new System.Drawing.Point(355, 3);
+            this.btnViewbill.Location = new System.Drawing.Point(365, 3);
             this.btnViewbill.Name = "btnViewbill";
             this.btnViewbill.Size = new System.Drawing.Size(110, 23);
             this.btnViewbill.TabIndex = 2;
@@ -813,6 +823,18 @@
             this.panel24.Size = new System.Drawing.Size(365, 52);
             this.panel24.TabIndex = 3;
             // 
+            // nmType
+            // 
+            this.nmType.Location = new System.Drawing.Point(160, 11);
+            this.nmType.Maximum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.nmType.Name = "nmType";
+            this.nmType.Size = new System.Drawing.Size(41, 22);
+            this.nmType.TabIndex = 1;
+            // 
             // label11
             // 
             this.label11.AutoSize = true;
@@ -946,17 +968,55 @@
             this.btnAddaccount.UseVisualStyleBackColor = true;
             this.btnAddaccount.Click += new System.EventHandler(this.btnAddaccount_Click);
             // 
-            // nmType
+            // btnFirstBillPage
             // 
-            this.nmType.Location = new System.Drawing.Point(160, 11);
-            this.nmType.Maximum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.nmType.Name = "nmType";
-            this.nmType.Size = new System.Drawing.Size(41, 22);
-            this.nmType.TabIndex = 1;
+            this.btnFirstBillPage.Location = new System.Drawing.Point(4, 436);
+            this.btnFirstBillPage.Name = "btnFirstBillPage";
+            this.btnFirstBillPage.Size = new System.Drawing.Size(120, 23);
+            this.btnFirstBillPage.TabIndex = 1;
+            this.btnFirstBillPage.Text = "First";
+            this.btnFirstBillPage.UseVisualStyleBackColor = true;
+            this.btnFirstBillPage.Click += new System.EventHandler(this.btnFirstBillPage_Click);
+            // 
+            // btnLastBillPage
+            // 
+            this.btnLastBillPage.Location = new System.Drawing.Point(708, 436);
+            this.btnLastBillPage.Name = "btnLastBillPage";
+            this.btnLastBillPage.Size = new System.Drawing.Size(120, 23);
+            this.btnLastBillPage.TabIndex = 2;
+            this.btnLastBillPage.Text = "Last";
+            this.btnLastBillPage.UseVisualStyleBackColor = true;
+            this.btnLastBillPage.Click += new System.EventHandler(this.btnLastBillPage_Click);
+            // 
+            // btnPrevioursBillPage
+            // 
+            this.btnPrevioursBillPage.Location = new System.Drawing.Point(130, 436);
+            this.btnPrevioursBillPage.Name = "btnPrevioursBillPage";
+            this.btnPrevioursBillPage.Size = new System.Drawing.Size(120, 23);
+            this.btnPrevioursBillPage.TabIndex = 3;
+            this.btnPrevioursBillPage.Text = "Previours";
+            this.btnPrevioursBillPage.UseVisualStyleBackColor = true;
+            this.btnPrevioursBillPage.Click += new System.EventHandler(this.btnPrevioursBillPage_Click);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(582, 436);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(120, 23);
+            this.button2.TabIndex = 4;
+            this.button2.Text = "Next";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // txtPageBill
+            // 
+            this.txtPageBill.Location = new System.Drawing.Point(372, 436);
+            this.txtPageBill.Name = "txtPageBill";
+            this.txtPageBill.Size = new System.Drawing.Size(100, 22);
+            this.txtPageBill.TabIndex = 5;
+            this.txtPageBill.Text = "1";
+            this.txtPageBill.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtPageBill.TextChanged += new System.EventHandler(this.txtPageBill_TextChanged);
             // 
             // fAdmin
             // 
@@ -969,6 +1029,7 @@
             this.tabControl1.ResumeLayout(false);
             this.tpBill.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvBill)).EndInit();
             this.panel1.ResumeLayout(false);
             this.tpFood.ResumeLayout(false);
@@ -1011,6 +1072,7 @@
             this.panel22.ResumeLayout(false);
             this.panel24.ResumeLayout(false);
             this.panel24.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nmType)).EndInit();
             this.panel25.ResumeLayout(false);
             this.panel25.PerformLayout();
             this.panel26.ResumeLayout(false);
@@ -1018,7 +1080,6 @@
             this.panel28.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dtgvAccount)).EndInit();
             this.panel29.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.nmType)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1109,5 +1170,10 @@
         private System.Windows.Forms.Button btnAddaccount;
         private System.Windows.Forms.Button btnResrtpass;
         private System.Windows.Forms.NumericUpDown nmType;
+        private System.Windows.Forms.TextBox txtPageBill;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnPrevioursBillPage;
+        private System.Windows.Forms.Button btnLastBillPage;
+        private System.Windows.Forms.Button btnFirstBillPage;
     }
 }
